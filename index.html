@@ -1,44 +1,919 @@
 <!DOCTYPE html>
-<html>
+<html class="overflow-x-auto" lang="en">
+  <head>
+    <title>Zeevo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <title>Zeevo | Create, Connect, Earn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="forms, surveys, games, NFTs">
-  <meta name="description"
-    content="Zeevo is a web application that enables you to create surveys, questionnaires, games, curated collections, and more. ">
-  <script defer data-domain="zeevo.co" src="https://plausible.io/js/plausible.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="manifest" href="img/site.webmanifest">
-  <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <meta name="msapplication-TileColor" content="#603cba">
-  <meta name="msapplication-config" content="img/browserconfig.xml">
-  <meta name="theme-color" content="#000000">
-  <link href="dist/output.css" rel="stylesheet">
-</head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-<body class="bg-black">
-  <div class="min-h-screen max-h-screen bg-center" style="background-image: url('img/Icon.png')">
+    <meta name="image" property="og:image" content="banner.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Title of the document" />
+    <meta property="og:url" content="http://wwww.url-of-my-site.com" />
+    <link rel="canonical" href="http://wwww.url-of-my-site.com" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="twitter:creator" content="@nickbilton" />
+    <meta
+      property="og:image"
+      content="http://wwww.url-of-my-site.com/banner.png"
+    />
+    <meta name="twitter:site" content="@myTwitter" />
+    <meta name="twitter:creator" content="@myTwitter" />
+    <meta name="twitter:title" content="My wonderful project" />
+    <meta
+      name="twitter:description"
+      content="Description of the twitter card."
+    />
+    <meta
+      name="twitter:image"
+      content="http://wwww.url-of-my-site.com/banner.png"
+    />
 
-    <div class="w-full p-4">
-      <main role="main" class="w-full flex flex-col h-screen content-center justify-center">
-        <div class="w-full sm:w-1/2 lg:w-1/3 bg-gray-50 rounded-xl m-auto">
-          <div class="bg-gray-800 rounded shadow px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <p class="text-xl text-white">✨Zeevo testing is live! Visit
-              <a href="https://discord.gg/9FsH6VYHCr" class="text-blue-600">#alpha-test-club</a>
-              on Discord & request your initiation sequence today ✨
-            </p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#05021A",
+              greytext: "#898DAF",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;800&family=Poppins&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
 
+      .menu {
+        transform: translateY(-100%);
+        transition: transform 0.2s;
+        z-index: 99;
+        background: #05021a;
+        list-style: none;
+      }
+      .showMenu {
+        transform: translateY(0);
+      }
+      .custom-border {
+        border: solid 3px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 3000px 1px #05021a inset;
+      }
+      .custom-border-login {
+        border: solid 3px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 3000px 1px #411343 inset;
+      }
+      .custom-background {
+        border: solid 4px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+    </style>
+    <script>
+      function docReady(fn) {
+        // see if DOM is already available
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          // call on next available tick
+          setTimeout(fn, 1);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+
+      docReady(function () {
+        const menu = document.querySelector(".menu");
+        const menuItem = document.querySelectorAll(".menuItem");
+        const hamburger = document.querySelector(".hamburger");
+        const hamburgerClose = document.querySelector(".hamburger-close");
+
+        function toggleMenu() {
+          if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            hamburgerClose.style.display = "none";
+          } else {
+            menu.classList.add("showMenu");
+            hamburgerClose.style.display = "block";
+          }
+        }
+
+        hamburgerClose.addEventListener("click", toggleMenu);
+        hamburger.addEventListener("click", toggleMenu);
+      });
+      // self executing function here
+    </script>
+  </head>
+  <body class="bg-background px4 lg:mx-auto relative overflow-x-hidden">
+    <object
+      name="background-top"
+      data="/images/bg-top.svg"
+      class="absolute z-0"
+      style="left: 30%; top: -40%"
+    ></object>
+    <header
+      class="
+        w-full
+        max-w-screen-xl
+        mx-auto
+        z-10
+        flex flex-row
+        items-center
+        p-2
+        text-lg
+        justify-between
+        py-12
+      "
+    >
+      <div class="text-lg text-white lg:flex">
+        <object
+          name="zeevo logo"
+          data="/images/header.svg"
+          class="w-44 z-10"
+        ></object>
+      </div>
+      <ul
+        class="
+          w-full
+          lg:w-1/2
+          gap-12
+          lg:gap-20
+          items-center
+          justify-center
+          hidden
+          lg:flex
+          z-10
+        "
+      >
+        <li>
+          <a class="text-white hover:underline" href="#" target="_blank"
+            >Home</a
+          >
+        </li>
+
+        <li>
+          <a class="text-white hover:underline" href="#" target="_blank"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a class="text-white hover:underline" href="#" target="_blank"
+            >Influencers</a
+          >
+        </li>
+
+        <li>
+          <a class="text-white hover:underline" href="#" target="_blank"
+            >Subscriptions</a
+          >
+        </li>
+      </ul>
+
+      <ul class="menu fixed top-0 left-0 bottom-0 right-0 text-white p-4">
+        <li>
+          <a class="menuItem text-white hover:underline my-6 block" href="#"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a class="menuItem text-white hover:underline my-6 block" href="#"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a class="menuItem text-white hover:underline my-6 block" href="#"
+            >Influencers</a
+          >
+        </li>
+        <li>
+          <a class="menuItem text-white hover:underline my-6 block" href="#"
+            >Subscription</a
+          >
+        </li>
+        <li class="text-center mt-8">
+          <button class="hamburger-close mx-auto underline text-lg text-right">
+            Close
+          </button>
+        </li>
+        <button
+          class="
+            py-2
+            custom-border-login
+            px-8
+            absolute
+            top-10
+            right-10
+            font-bold
+            transition
+            ease-in
+            duration-200
+            rounded-full
+            text-white
+            hover:underline
+            focus:outline-none
+          "
+        >
+          Login
+        </button>
+      </ul>
+
+      <div class="flex flex-row-reverse text-white mr-4 ml-4 lg:hidden z-10">
+        <button class="hamburger">
+          <svg
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="h-8 w-8"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center hidden lg:flex z-10">
+        <button
+          class="
+            py-2
+            custom-border-login
+            px-8
+            font-bold
+            transition
+            ease-in
+            duration-200
+            rounded-full
+            text-white
+            hover:underline
+            focus:outline-none
+          "
+        >
+          Login
+        </button>
+      </div>
+    </header>
+    <!-- CTA -->
+    <section class="mt-10 lg:mx-auto max-w-screen-xl mx-auto px-4 lg:px-0">
+      <div class="flex">
+        <div class="flex relative">
+          <div class="flex w-full lg:w-3/4 flex-col justify-center">
+            <object
+              name="decorations"
+              data="/images/pastille2.svg"
+              class="absolute -top-20"
+              style="width: 1200px"
+            ></object>
+            <object
+              data="/images/zeevo.svg"
+              name="zeevo logo"
+              class="w-72"
+            ></object>
+            <h1
+              class="text-greytext my-16 pl-6 z-10"
+              style="border-left: 3px #e11660 solid"
+            >
+              Connect with your fans at a whole new level. Lorem ipsum dolor sit
+              amet, conse ctetur adipiscing elit.
+            </h1>
+            <div class="flex gap-6">
+              <button
+                class="
+                  py-1
+                  px-12
+                  lg:py-3.5
+                  z-10
+                  lg:px-16
+                  font-bold
+                  custom-background
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  focus:outline-none
+                "
+              >
+                Start now
+              </button>
+              <button
+                class="
+                  z-10
+                  py-1
+                  px-12
+                  lg:py-3.5
+                  lg:px-16
+                  custom-border
+                  font-bold
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  focus:outline-none
+                "
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
+        <div class="relative w-4/5">
+          <object
+            data="/images/home.svg"
+            name="CTA logo"
+            class="w-full"
+          ></object>
+          <object
+            name="Decorations"
+            data="/images/pastille.svg"
+            class="w-4/5 absolute top-0"
+          ></object>
+        </div>
+      </div>
+    </section>
+    <!-- END CTA -->
+
+    <!-- BE A MOVER -->
+    <section
+      class="
+        mx-4
+        lg:mx-auto
+        max-w-screen-xl
+        custom-border
+        my-8
+        lg:my-20
+        py-8
+        lg:py-16
+        px-8
+        lg:px-16
+        rounded-3xl
+      "
+    >
+      <div class="flex flex-col lg:flex-row gap-20">
+        <div
+          class="
+            flex flex-col
+            w-full
+            lg:w-1/2
+            gap-4
+            justify-center
+            items-center
+          "
+        >
+          <h2
+            class="text-white text-2xl lg:text-5xl font-bold"
+            style="line-height: 65px"
+          >
+            Be a first mover and bring your brand into the metaverse.
+          </h2>
+          <h3 class="text-greytext" style="line-height: 26px">
+            Be part of the revolution Connect with your fans at a whole new
+            level. Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+            Build quizzes, surveys, questionnaires, and games. will prLorem
+            ipsum dolor sit amet, conse ctetur adipiscing elit. Asti buluem dips
+            Vesti bulum nisl.<br /><br />
+            Build quizzes, surveys, questionnaires, and games. will prLorem
+            ipsum dolor sit amet, conse ctetur adipiscing elit. Asti buluem dips
+            Vesti bulum nisl.
+          </h3>
+        </div>
+        <div class="w-full lg:w-1/2 flex flex-col gap-16">
+          <div class="flex flex-col lg:flex-row gap-16">
+            <div class="z-10">
+              <div class="flex gap-4">
+                <object
+                  data="/images/collect.svg"
+                  name="collect"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-1/2">
+                  Collect Feedback
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Collect feedback from your fans, listeners, guild, and more. te
+                will prLorem ipsum dolor sit amet, conse ctetur adipiscing elit.
+                Asti buluem dips.
+              </p>
+              <button
+                class="
+                  py-2
+                  px-4
+                  custom-border
+                  font-bold
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  text-xs
+                  focus:outline-none
+                "
+              >
+                Learn more
+              </button>
+            </div>
+            <div class="z-10">
+              <div class="flex gap-4">
+                <object data="/images/dao.svg" name="dao" class="w-10"></object>
+                <p class="text-white text-lg font-bold w-1/2">
+                  DAO Cordination
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Write DAO coordination strategies . We will prLorem ipsum dolor
+                sit amet, conse ctetur adipiscing elit. Asti buluem dips Vesti
+                bulum nisl.
+              </p>
+              <button
+                class="
+                  py-2
+                  px-4
+                  custom-border
+                  font-bold
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  text-xs
+                  focus:outline-none
+                "
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-8">
+            <div>
+              <div class="flex gap-4">
+                <object
+                  data="/images/build.svg"
+                  name="build"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-1/2">Build anything</p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Build quizzes, surveys, questionnaires, and games. will prLorem
+                ipsum dolor sit amet, conse ctetur adipiscing elit. Asti buluem
+                dips Vesti bulum nisl.
+              </p>
+              <button
+                class="
+                  py-2
+                  px-4
+                  custom-border
+                  font-bold
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  text-xs
+                  focus:outline-none
+                "
+              >
+                Learn more
+              </button>
+            </div>
+            <div>
+              <div class="flex gap-4">
+                <object
+                  data="/images/collect.svg"
+                  name="collect"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-1/2">
+                  Custom PoP NFTs
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Distribute custom proof of participation NFTs to increase
+                engagement. Buluem dips Vesti bulum nisl. Ya mate Lorem ipsum
+                dolor sit amet, wild goose.
+              </p>
+              <button
+                class="
+                  py-2
+                  px-4
+                  custom-border
+                  font-bold
+                  transition
+                  ease-in
+                  duration-200
+                  rounded-full
+                  text-white
+                  hover:underline
+                  text-xs
+                  focus:outline-none
+                "
+              >
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END BE A MOVER -->
+
+    <!-- HOW ITS WORK-->
+    <section class="mt-32 mb-10 z-10 lg:mx-auto max-w-screen-xl">
+      <h3
+        class="
+          flex
+          w-full
+          items-center
+          justify-center
+          text-white text-5xl
+          gap-4
+        "
+      >
+        <object data="/images/work.svg" name="work" class="w-10"></object> How
+        it works
+      </h3>
+      <h4
+        class="
+          flex
+          w-full
+          items-center
+          justify-center
+          text-greytext
+          mx-auto
+          max-w-screen-md
+          py-16
+          px-4
+          lg:px-0
+          text-center text-lg
+        "
+        style="line-height: 46px"
+      >
+        Click the through the steps and see how easy it is to create original
+        content for your fans, guild or DAO. Nam libero tempore, cum soluta
+        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+        placeat facere.
+      </h4>
+      <div class="lg:py-16 lg:px-16">
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            justify-between
+            items-center
+            relative
+            py-16
+            mx-4
+            lg:mx-0
+          "
+        >
+          <object
+            data="/images/1.svg"
+            name="First step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            name="line"
+            data="/images/line.svg"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="
+              text-white
+              z-10
+              text-3xl
+              w-full
+              lg:w-2/6
+              mt-4
+              text-center
+              lg:text-left
+              lg:mt-0
+              px-6
+            "
+          >
+            Choose a title and description for your new sequence.
+          </p>
+          <p
+            style="border-left: 3px #ffc043 solid"
+            class="
+              text-greytext
+              w-full
+              lg:w-3/6
+              text-center
+              lg:text-left
+              mt-4
+              lg:mt-0
+              lg:pl-6
+              mx-4
+              lg:mx-0
+            "
+          >
+            Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+            tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+            quo minus id quod maxime placeat facere nobis est eligendi optio
+            cumque nihil impedit quo.
+          </p>
+        </div>
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            justify-between
+            items-center
+            relative
+            lg:py-16
+            mx-4
+            lg:mx-0
+          "
+        >
+          <object
+            data="/images/2.svg"
+            name="second step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            data="/images/line.svg"
+            name="line"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="
+              text-white
+              z-10
+              text-3xl
+              w-full
+              lg:w-2/6
+              mt-4
+              text-center
+              lg:text-left
+              lg:mt-0
+              px-6
+            "
+          >
+            Create sequence blocks and fill them with your content.
+          </p>
+          <p
+            style="border-left: 3px #68d795 solid"
+            class="
+              text-greytext
+              w-full
+              lg:w-3/6
+              text-center
+              lg:text-left
+              mt-4
+              lg:mt-0
+              pl-6
+            "
+          >
+            Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+            tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+            quo minus id quod maxime placeat facere nobis est eligendi optio
+            cumque nihil impedit quo.
+          </p>
+        </div>
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            justify-between
+            items-center
+            relative
+            py-16
+            mx-4
+            lg:mx-0
+          "
+        >
+          <object
+            data="/images/3.svg"
+            name="Thrid step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            data="/images/line.svg"
+            name="line"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="
+              text-white
+              z-10
+              text-3xl
+              w-full
+              lg:w-2/6
+              mt-4
+              text-center
+              lg:text-left
+              lg:mt-0
+              px-6
+            "
+          >
+            Customize the visuals and design your PoP NFT to your liking.
+          </p>
+          <p
+            style="border-left: 3px #e11660 solid"
+            class="
+              text-greytext
+              w-full
+              lg:w-3/6
+              text-center
+              lg:text-left
+              mt-4
+              lg:mt-0
+              pl-6
+            "
+          >
+            Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+            tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+            quo minus id quod maxime placeat facere nobis est eligendi optio
+            cumque nihil impedit quo.
+          </p>
+        </div>
+        <div
+          class="
+            flex flex-col
+            lg:flex-row
+            justify-between
+            items-center
+            py-16
+            mx-4
+            lg:mx-0
+          "
+        >
+          <object
+            data="/images/4.svg"
+            name="Fourth step"
+            class="w-16 z-10"
+          ></object>
+          <p
+            class="
+              text-white
+              z-10
+              text-3xl
+              w-full
+              lg:w-2/6
+              mt-4
+              text-center
+              lg:text-left
+              lg:mt-0
+              px-6
+            "
+          >
+            Share your sequence with your fans, follwers, guild or DAO.
+          </p>
+          <p
+            style="border-left: 3px #ffc043 solid"
+            class="
+              text-greytext
+              w-full
+              lg:w-3/6
+              text-center
+              lg:text-left
+              mt-4
+              lg:mt-0
+              pl-6
+            "
+          >
+            Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+            tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+            quo minus id quod maxime placeat facere nobis est eligendi optio
+            cumque nihil impedit quo.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- END HOW ITS WORK-->
+    <!-- START NOW-->
+    <div class="flex items-center justify-center z-10">
+      <button
+        class="
+          py-3.5
+          px-12
+          font-bold
+          z-10
+          custom-background
+          transition
+          ease-in
+          duration-200
+          rounded-full
+          text-white
+          hover:underline
+          focus:outline-none
+        "
+      >
+        Start now
+      </button>
     </div>
-    </main>
-  </div>
+    <!-- END START NOW-->
+    <object
+      data="/images/bg-bottom.svg"
+      name="Bottom bakcground"
+      class="absolute z-0"
+      style="left: -20%; bottom: 0; width: 1306px; height: 800px"
+    ></object>
+    <!-- FOOTER-->
+    <footer
+      class="
+        w-full
+        lg:mx-auto
+        max-w-screen-xl
+        flex flex-row
+        items-center
+        p-2
+        mt-44
+        text-lg
+        justify-between
+        relative
+        py-12
+      "
+    >
+      <object
+        name="decoration"
+        data="/images/pastille3.svg"
+        class="absolute bottom-0 z-0"
+        style="width: 1200px"
+      ></object>
+      <div class="text-lg text-white relative">
+        <object
+          name="Zeevo logo"
+          data="/images/header.svg"
+          class="w-20 lg:w-44 absolute -top-20 lg:-top-8"
+        ></object>
+      </div>
+      <p class="text-greytext w-full text-center">
+        © Copyright 2022. Zacs badass bizz. Lorem ipsum sumislo.
+      </p>
+    </footer>
 
-  </div>
-</body>
-
+    <!-- END FOOTER-->
+  </body>
 </html>
