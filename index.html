@@ -1,423 +1,637 @@
 <!DOCTYPE html>
 <html class="overflow-x-auto" lang="en">
-
-<head>
-  <title>Zeevo</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="forms, surveys, games, NFTs" />
-  <meta name="description"
-    content="Zeevo is a web app that enables creators to build & share interactive surveys, questionnaires, games, & collections." />
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png" />
-  <link rel="manifest" href="./images/site.webmanifest" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="image" property="og:image" content="banner.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta property="og:title" content="Zeevo Meta Sequencer" />
-  <meta property="og:url" content="https://zeevo.co" />
-  <link rel="canonical" href="https://zeevo.co" />
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-  <meta property="og:image" content="https://zeevo.co/banner.png" />
-  <meta name="twitter:site" content="@zeevo_co" />
-  <meta name="twitter:creator" content="@zeevo_co" />
-  <meta name="twitter:title" content="Zeevo" />
-  <meta name="twitter:description"
-    content="Zeevo is a web app that enables creators to build & share interactive surveys, questionnaires, games, & collections." />
-  <meta name="twitter:image" content="https://zeevo.co/banner.png" />
-  <script defer data-domain="zeevo.co" src="https://plausible.io/js/plausible.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: "#05021A",
-            greytext: "#898DAF",
+  <head>
+    <title>Zeevo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="forms, surveys, games, NFTs" />
+    <meta
+      name="description"
+      content="Zeevo is a web app that enables creators to build & share interactive surveys, questionnaires, games, & collections."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="image" property="og:image" content="banner.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Zeevo Meta Sequencer" />
+    <meta property="og:url" content="https://zeevo.co" />
+    <link rel="canonical" href="https://zeevo.co" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta property="og:image" content="https://zeevo.co/banner.png" />
+    <meta name="twitter:site" content="@zeevo_co" />
+    <meta name="twitter:creator" content="@zeevo_co" />
+    <meta name="twitter:title" content="Zeevo" />
+    <meta
+      name="twitter:description"
+      content="Zeevo is a web app that enables creators to build & share interactive surveys, questionnaires, games, & collections."
+    />
+    <meta name="twitter:image" content="https://zeevo.co/banner.png" />
+    <script
+      defer
+      data-domain="zeevo.co"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#05021A",
+              greytext: "#898DAF",
+            },
           },
         },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;800&family=Poppins&family=Press+Start+2P&display=swap"
-    rel="stylesheet" />
-  <style>
-    * {
-      font-family: "Poppins", sans-serif;
-    }
-
-    .menu {
-      transform: translateY(-100%);
-      transition: transform 0.2s;
-      z-index: 99;
-      background: #05021a;
-      list-style: none;
-    }
-
-    .showMenu {
-      transform: translateY(0);
-    }
-
-    .custom-border {
-      border: solid 3px transparent;
-      background-image: linear-gradient(rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 0)),
-        linear-gradient(101deg, #e11660, #52116a);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      box-shadow: 2px 3000px 1px #05021a inset;
-    }
-
-    .custom-border-login {
-      border: solid 3px transparent;
-      background-image: linear-gradient(rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 0)),
-        linear-gradient(101deg, #e11660, #52116a);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      box-shadow: 2px 3000px 1px #411343 inset;
-    }
-
-    .custom-background {
-      border: solid 4px transparent;
-      background-image: linear-gradient(rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 0)),
-        linear-gradient(101deg, #e11660, #52116a);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-    }
-  </style>
-  <script>
-    function docReady(fn) {
-      // see if DOM is already available
-      if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-      ) {
-        // call on next available tick
-        setTimeout(fn, 1);
-      } else {
-        document.addEventListener("DOMContentLoaded", fn);
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;800&family=Poppins&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
       }
-    }
 
-    docReady(function () {
-      const menu = document.querySelector(".menu");
-      const menuItem = document.querySelectorAll(".menuItem");
-      const hamburger = document.querySelector(".hamburger");
-      const hamburgerClose = document.querySelector(".hamburger-close");
+      .menu {
+        transform: translateY(-100%);
+        transition: transform 0.2s;
+        z-index: 99;
+        background: #05021a;
+        list-style: none;
+      }
 
-      function toggleMenu() {
-        if (menu.classList.contains("showMenu")) {
-          menu.classList.remove("showMenu");
-          hamburgerClose.style.display = "none";
+      .showMenu {
+        transform: translateY(0);
+      }
+
+      .custom-border {
+        border: solid 3px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 3000px 1px #05021a inset;
+      }
+
+      .custom-border-login {
+        border: solid 3px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 2px 3000px 1px #411343 inset;
+      }
+
+      .custom-background {
+        border: solid 4px transparent;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          linear-gradient(101deg, #e11660, #52116a);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+    </style>
+    <script>
+      function docReady(fn) {
+        // see if DOM is already available
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          // call on next available tick
+          setTimeout(fn, 1);
         } else {
-          menu.classList.add("showMenu");
-          hamburgerClose.style.display = "block";
+          document.addEventListener("DOMContentLoaded", fn);
         }
       }
 
-      hamburgerClose.addEventListener("click", toggleMenu);
-      hamburger.addEventListener("click", toggleMenu);
-    });
+      docReady(function () {
+        const menu = document.querySelector(".menu");
+        const menuItem = document.querySelectorAll(".menuItem");
+        const hamburger = document.querySelector(".hamburger");
+        const hamburgerClose = document.querySelector(".hamburger-close");
+
+        function toggleMenu() {
+          if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            hamburgerClose.style.display = "none";
+          } else {
+            menu.classList.add("showMenu");
+            hamburgerClose.style.display = "block";
+          }
+        }
+
+        hamburgerClose.addEventListener("click", toggleMenu);
+        hamburger.addEventListener("click", toggleMenu);
+      });
       // self executing function here
-  </script>
-</head>
+    </script>
+  </head>
 
-<body class="bg-background px4 lg:mx-auto relative overflow-x-hidden">
-  <object name="background-top" data="./images/bg-top.svg" class="absolute z-0" style="left: 30%; top: -40%"></object>
-  <header class="w-full max-w-screen-xl mx-auto z-10 flex flex-row items-center p-2 text-lg justify-between py-12">
-    <div class="text-lg text-white lg:flex">
-      <object name="zeevo logo" data="./images/header.svg" class="w-44 z-10"></object>
-    </div>
-    <ul class="w-full lg:w-1/2 gap-12 lg:gap-20 items-center justify-center hidden lg:flex z-10">
-      <li>
-        <a class="text-white hover:underline" href="./index.html">Home</a>
-      </li>
-      <li>
-        <a class="text-white hover:underline" href="https://public.3.basecamp.com/p/DuJjDgS9zCHhqwTDGyxaS3U3"
-          target="_blank">Learn</a>
-      </li>
-      <li>
-        <a class="text-white hover:underline" href="https://discord.gg/dX4PzT8NWD" target="_blank">Creators</a>
-      </li>
+  <body class="bg-background px4 lg:mx-auto relative overflow-x-hidden">
+    <object
+      name="background-top"
+      data="./images/bg-top.svg"
+      class="absolute z-0"
+      style="left: 30%; top: -40%"
+    ></object>
+    <header
+      class="w-full max-w-screen-xl mx-auto z-10 flex flex-row items-center p-2 text-lg justify-between py-12"
+    >
+      <div class="text-lg text-white lg:flex">
+        <object
+          name="zeevo logo"
+          data="./images/header.svg"
+          class="w-44 z-10"
+        ></object>
+      </div>
+      <ul
+        class="w-full lg:w-1/2 gap-12 lg:gap-20 items-center justify-center hidden lg:flex z-10"
+      >
+        <li>
+          <a class="text-white hover:underline" href="./index.html">Home</a>
+        </li>
+        <li>
+          <a
+            class="text-white hover:underline"
+            href="https://public.3.basecamp.com/p/DuJjDgS9zCHhqwTDGyxaS3U3"
+            target="_blank"
+            >Learn</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-white hover:underline"
+            href="https://discord.gg/dX4PzT8NWD"
+            target="_blank"
+            >Creators</a
+          >
+        </li>
 
-      <li>
-        <a class="text-white hover:underline" href="https://linktr.ee/zeevo" target="_blank">Connect</a>
-      </li>
-    </ul>
+        <li>
+          <a
+            class="text-white hover:underline"
+            href="https://linktr.ee/zeevo"
+            target="_blank"
+            >Connect</a
+          >
+        </li>
+      </ul>
 
-    <ul class="menu fixed top-0 left-0 bottom-0 right-0 text-white p-4">
-      <li>
-        <a class="menuItem text-white hover:underline my-6 block" href="#">Home</a>
-      </li>
-      <li>
-        <a class="menuItem text-white hover:underline my-6 block"
-          href="https://public.3.basecamp.com/p/DuJjDgS9zCHhqwTDGyxaS3U3" target="_blank">Learn</a>
-      </li>
-      <li>
-        <a class="menuItem text-white hover:underline my-6 block" href="#" target="_blank">Creators</a>
-      </li>
-      <li>
-        <a class="menuItem text-white hover:underline my-6 block" href="https://linktr.ee/zeevo"
-          target="_blank">Connect</a>
-      </li>
-      <li class="text-center mt-8">
-        <button class="hamburger-close mx-auto underline text-lg text-right">
-          Close
+      <ul class="menu fixed top-0 left-0 bottom-0 right-0 text-white p-4">
+        <li>
+          <a class="menuItem text-white hover:underline my-6 block" href="#"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="menuItem text-white hover:underline my-6 block"
+            href="https://public.3.basecamp.com/p/DuJjDgS9zCHhqwTDGyxaS3U3"
+            target="_blank"
+            >Learn</a
+          >
+        </li>
+        <li>
+          <a
+            class="menuItem text-white hover:underline my-6 block"
+            href="#"
+            target="_blank"
+            >Creators</a
+          >
+        </li>
+        <li>
+          <a
+            class="menuItem text-white hover:underline my-6 block"
+            href="https://linktr.ee/zeevo"
+            target="_blank"
+            >Connect</a
+          >
+        </li>
+        <li class="text-center mt-8">
+          <button class="hamburger-close mx-auto underline text-lg text-right">
+            Close
+          </button>
+        </li>
+        <button
+          class="py-2 custom-border-login px-8 absolute top-10 right-10 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
+          onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
+        >
+          Login
         </button>
-      </li>
+      </ul>
+
+      <div class="flex flex-row-reverse text-white mr-4 ml-4 lg:hidden z-10">
+        <button class="hamburger">
+          <svg
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="h-8 w-8"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center hidden lg:flex z-10">
+        <button
+          class="py-2 custom-border-login px-8 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
+          onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
+        >
+          Login
+        </button>
+      </div>
+    </header>
+    <!-- CTA -->
+    <section class="mt-10 lg:mx-auto max-w-screen-xl mx-auto px-4 lg:px-0">
+      <div class="flex">
+        <div class="flex relative">
+          <div class="flex w-full lg:w-3/4 flex-col justify-center">
+            <object
+              name="decorations"
+              data="./images/pastille2.svg"
+              class="absolute -top-20"
+              style="width: 1200px"
+            ></object>
+            <object
+              data="./images/zeevo.svg"
+              name="zeevo logo"
+              class="w-72"
+            ></object>
+            <h1
+              class="text-greytext my-16 pl-6 z-10"
+              style="border-left: 3px #e11660 solid"
+            >
+              Create interactive content to connect with friends & fans, & build
+              community.
+            </h1>
+            <div class="flex gap-6">
+              <button
+                class="py-1 px-12 lg:py-3.5 z-10 lg:px-16 font-bold custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
+                onclick=" window.open('https://app.zeevo.co/auth/register','_blank')"
+              >
+                Start now
+              </button>
+              <button
+                class="z-10 py-1 px-12 lg:py-3.5 lg:px-16 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
+                onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="relative w-4/5">
+          <object
+            data="./images/home_1.svg"
+            name="CTA logo"
+            class="w-full"
+          ></object>
+          <object
+            name="Decorations"
+            data="./images/pastille.svg"
+            class="w-4/5 absolute top-0"
+          ></object>
+        </div>
+      </div>
+    </section>
+    <!-- END CTA -->
+
+    <!-- BE A MOVER -->
+    <section
+      class="mx-4 lg:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-16 px-8 lg:px-16 rounded-3xl"
+    >
+      <div class="flex flex-col lg:flex-row gap-20">
+        <div
+          class="flex flex-col w-full lg:w-1/2 gap-4 justify-center items-center"
+        >
+          <h2
+            class="text-white text-2xl lg:text-5xl font-bold"
+            style="line-height: 65px"
+          >
+            Engage your audience & build community. Create a Zeevo sequence
+            today!
+          </h2>
+          <h3 class="text-greytext" style="line-height: 26px">
+            Be part of the revolution. Create surveys, questionnaires, games,
+            curated collections, and much more.<br /><br />
+            Respondents receive custom proof of participation NFTs as a reward
+            for their time, attention, and ideas.
+          </h3>
+        </div>
+        <div class="w-full lg:w-1/2 flex flex-col gap-16">
+          <div class="flex flex-col lg:flex-row gap-16">
+            <div class="z-10">
+              <div class="flex gap-4 items-center">
+                <object
+                  data="./images/collect.svg"
+                  name="collect"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-full lg:w-1/2">
+                  Collect Feedback
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Create forms, surveys, and questionnaires to collect feedback
+                from your fans, listeners, DAO, club, or guild.
+              </p>
+              <a
+                target="_blank"
+                href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
+                class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none"
+              >
+                Learn more
+              </a>
+            </div>
+            <div class="z-10">
+              <div class="flex gap-4 items-center">
+                <object
+                  data="./images/dao.svg"
+                  name="dao"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-full lg:w-1/2">
+                  DAO Coordination
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Coordinating ideas, thoughts, and feedback from a global group
+                of digital nomads doesn't have to be complicated.
+              </p>
+              <a
+                href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
+                target="_blank"
+                class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-8">
+            <div class="z-10">
+              <div class="flex gap-4 items-center">
+                <object
+                  data="./images/build.svg"
+                  name="build"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-full lg:w-1/2">
+                  Build anything
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Create unique interactive content for your events, club, or
+                podcast. Craft a personality test, would-you-rather game,
+                interactive stories, and more.
+              </p>
+              <a
+                class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none"
+                href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
+                target="_blank"
+              >
+                Learn more
+              </a>
+            </div>
+            <div class="z-10">
+              <div class="flex gap-4 items-center">
+                <object
+                  data="./images/collect.svg"
+                  name="collect"
+                  class="w-10"
+                ></object>
+                <p class="text-white text-lg font-bold w-full lg:w-1/2">
+                  Custom PoP NFTs
+                </p>
+              </div>
+              <p
+                class="text-greytext z-10 text-xs py-4"
+                style="line-height: 20px"
+              >
+                Distribute custom proof of participation NFTs to increase
+                engagement and build your community in Web3.
+              </p>
+              <a
+                target="_blank"
+                href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
+                class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END BE A MOVER -->
+
+    <!-- HOW ITS WORK-->
+    <section class="mt-32 mb-10 z-10 lg:mx-auto max-w-screen-xl">
+      <h3
+        class="flex w-full items-center justify-center text-white text-5xl gap-4"
+      >
+        <object data="./images/work.svg" name="work" class="w-10"></object> How
+        it works
+      </h3>
+      <h4
+        class="flex w-full items-center justify-center text-greytext mx-auto max-w-screen-md py-16 px-4 lg:px-0 text-center text-lg"
+        style="line-height: 46px"
+      >
+        See how easy it is to create original content for your fans, guild, or
+        DAO with Zeevo.
+      </h4>
+      <div class="lg:py-16 lg:px-16">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center relative py-16 mx-4 lg:mx-0"
+        >
+          <object
+            data="./images/1.svg"
+            name="First step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            name="line"
+            data="./images/line.svg"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6"
+          >
+            Choose a title and description for your new sequence.
+          </p>
+          <p
+            style="border-left: 3px #ffc043 solid"
+            class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 lg:pl-6 mx-4 lg:mx-0"
+          >
+            The sequence title and description will help others know what to
+            expect from your sequence. When you link and share your sequence,
+            make it exciting and include a call to action!
+          </p>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center relative lg:py-16 mx-4 lg:mx-0"
+        >
+          <object
+            data="./images/2.svg"
+            name="second step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            data="./images/line.svg"
+            name="line"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6"
+          >
+            Create sequence blocks & fill them with your content.
+          </p>
+          <p
+            style="border-left: 3px #68d795 solid"
+            class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6"
+          >
+            You can think of a block as a question, but creators can use blocks
+            for various purposes. Blocks can communicate ideas or concepts too.
+            Zeevo supports multi-image, short answers, and multi-choice blocks
+            with our alpha release.
+          </p>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center relative py-16 mx-4 lg:mx-0"
+        >
+          <object
+            data="./images/3.svg"
+            name="Thrid step"
+            class="w-16 z-10"
+          ></object>
+          <object
+            data="./images/line.svg"
+            name="line"
+            class="absolute hidden lg:block z-0 h-48"
+            style="left: 30.5px; top: 140px"
+          ></object>
+          <p
+            class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6"
+          >
+            Customize the visuals & design your PoP NFT to your liking.
+          </p>
+          <p
+            style="border-left: 3px #e11660 solid"
+            class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6"
+          >
+            Set your PoP NFT image, title, and description, and let Zeevo handle
+            the rest. Respondents can connect their ETH accounts, and we send
+            them your custom PoP NFTs directly.
+          </p>
+        </div>
+        <div
+          class="flex flex-col lg:flex-row justify-between items-center py-16 mx-4 lg:mx-0"
+        >
+          <object
+            data="./images/4.svg"
+            name="Fourth step"
+            class="w-16 z-10"
+          ></object>
+          <p
+            class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6"
+          >
+            Share your sequence with your fans, followers, guild, or DAO.
+          </p>
+          <p
+            style="border-left: 3px #ffc043 solid"
+            class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6"
+          >
+            It's up to you how to distribute your sequence. By default, we don't
+            display your sequence to users, so it's 100% up to you how and where
+            you would like to share.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- END HOW ITS WORK-->
+    <!-- START NOW-->
+    <div class="flex items-center justify-center z-10">
       <button
-        class="py-2 custom-border-login px-8 absolute top-10 right-10 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-        onclick=" window.open('https://app.zeevo.co/auth/login','_blank')">
-        Login
-      </button>
-    </ul>
-
-    <div class="flex flex-row-reverse text-white mr-4 ml-4 lg:hidden z-10">
-      <button class="hamburger">
-        <svg width="20" height="20" fill="currentColor" class="h-8 w-8" viewBox="0 0 1792 1792"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z">
-          </path>
-        </svg>
+        class="py-3.5 px-12 font-bold z-10 custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
+        onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
+      >
+        Start now
       </button>
     </div>
-    <div class="flex items-center hidden lg:flex z-10">
-      <button
-        class="py-2 custom-border-login px-8 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-        onclick=" window.open('https://app.zeevo.co/auth/login','_blank')">
-        Login
-      </button>
-    </div>
-  </header>
-  <!-- CTA -->
-  <section class="mt-10 lg:mx-auto max-w-screen-xl mx-auto px-4 lg:px-0">
-    <div class="flex">
-      <div class="flex relative">
-        <div class="flex w-full lg:w-3/4 flex-col justify-center">
-          <object name="decorations" data="./images/pastille2.svg" class="absolute -top-20"
-            style="width: 1200px"></object>
-          <object data="./images/zeevo.svg" name="zeevo logo" class="w-72"></object>
-          <h1 class="text-greytext my-16 pl-6 z-10" style="border-left: 3px #e11660 solid">
-            Create interactive content to connect with friends & fans, & build
-            community.
-          </h1>
-          <div class="flex gap-6">
-            <button
-              class="py-1 px-12 lg:py-3.5 z-10 lg:px-16 font-bold custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-              onclick=" window.open('https://app.zeevo.co/auth/register','_blank')">
-              Start now
-            </button>
-            <button
-              class="z-10 py-1 px-12 lg:py-3.5 lg:px-16 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-              onclick=" window.open('https://app.zeevo.co/auth/login','_blank')">
-              Login
-            </button>
-          </div>
-        </div>
+    <!-- END START NOW-->
+    <object
+      data="./images/bg-bottom.svg"
+      name="Bottom background"
+      class="absolute z-0"
+      style="left: -20%; bottom: 0; width: 1306px; height: 800px"
+    ></object>
+    <!-- FOOTER-->
+    <footer
+      class="w-full lg:mx-auto max-w-screen-xl flex flex-row items-center p-2 mt-44 text-lg justify-between relative py-12"
+    >
+      <object
+        name="decoration"
+        data="./images/pastille3.svg"
+        class="absolute bottom-0 z-0"
+        style="width: 1200px"
+      ></object>
+      <div class="text-lg text-white relative">
+        <object
+          name="Zeevo logo"
+          data="./images/header.svg"
+          class="w-20 lg:w-44 absolute -top-20 lg:-top-8"
+        ></object>
       </div>
-      <div class="relative w-4/5">
-        <object data="./images/home_1.svg" name="CTA logo" class="w-full"></object>
-        <object name="Decorations" data="./images/pastille.svg" class="w-4/5 absolute top-0"></object>
-      </div>
-    </div>
-  </section>
-  <!-- END CTA -->
+      <p class="text-greytext w-full text-center">
+        © 2022 - Zeevo Technologies Inc
+      </p>
+    </footer>
 
-  <!-- BE A MOVER -->
-  <section class="mx-4 lg:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-16 px-8 lg:px-16 rounded-3xl">
-    <div class="flex flex-col lg:flex-row gap-20">
-      <div class="flex flex-col w-full lg:w-1/2 gap-4 justify-center items-center">
-        <h2 class="text-white text-2xl lg:text-5xl font-bold" style="line-height: 65px">
-          Engage your audience & build community. Create a Zeevo sequence
-          today!
-        </h2>
-        <h3 class="text-greytext" style="line-height: 26px">
-          Be part of the revolution. Create surveys, questionnaires, games,
-          curated collections, and much more.<br /><br />
-          Respondents receive custom proof of participation NFTs as a reward
-          for their time, attention, and ideas.
-        </h3>
-      </div>
-      <div class="w-full lg:w-1/2 flex flex-col gap-16">
-        <div class="flex flex-col lg:flex-row gap-16">
-          <div class="z-10">
-            <div class="flex gap-4 items-center">
-              <object data="./images/collect.svg" name="collect" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
-                Collect Feedback
-              </p>
-            </div>
-            <p class="text-greytext z-10 text-xs py-4" style="line-height: 20px">
-              Create forms, surveys, and questionnaires to collect feedback
-              from your fans, listeners, DAO, club, or guild.
-            </p>
-            <a target="_blank" href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
-              class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none">
-              Learn more
-            </a>
-          </div>
-          <div class="z-10">
-            <div class="flex gap-4 items-center">
-              <object data="./images/dao.svg" name="dao" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
-                DAO Coordination
-              </p>
-            </div>
-            <p class="text-greytext z-10 text-xs py-4" style="line-height: 20px">
-              Coordinating ideas, thoughts, and feedback from a global group
-              of digital nomads doesn't have to be complicated.
-            </p>
-            <a href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA" target="_blank"
-              class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none">
-              Learn more
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-col lg:flex-row gap-8">
-          <div class="z-10">
-            <div class="flex gap-4 items-center">
-              <object data="./images/build.svg" name="build" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
-                Build anything
-              </p>
-            </div>
-            <p class="text-greytext z-10 text-xs py-4" style="line-height: 20px">
-              Create unique interactive content for your events, club, or
-              podcast. Craft a personality test, would-you-rather game,
-              interactive stories, and more.
-            </p>
-            <a class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none"
-              href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA" target="_blank">
-              Learn more
-            </a>
-          </div>
-          <div class="z-10">
-            <div class="flex gap-4 items-center">
-              <object data="./images/collect.svg" name="collect" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
-                Custom PoP NFTs
-              </p>
-            </div>
-            <p class="text-greytext z-10 text-xs py-4" style="line-height: 20px">
-              Distribute custom proof of participation NFTs to increase
-              engagement and build your community in Web3.
-            </p>
-            <a target="_blank" href="https://mirror.xyz/zeevoco.eth/v8hH_cLES4HASpKb9dgJq-_G9kL-u_PioaYykkS5-PA"
-              class="py-2 px-4 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline text-xs focus:outline-none">
-              Learn more
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END BE A MOVER -->
-
-  <!-- HOW ITS WORK-->
-  <section class="mt-32 mb-10 z-10 lg:mx-auto max-w-screen-xl">
-    <h3 class="flex w-full items-center justify-center text-white text-5xl gap-4">
-      <object data="./images/work.svg" name="work" class="w-10"></object> How
-      it works
-    </h3>
-    <h4
-      class="flex w-full items-center justify-center text-greytext mx-auto max-w-screen-md py-16 px-4 lg:px-0 text-center text-lg"
-      style="line-height: 46px">
-      See how easy it is to create original content for your fans, guild, or
-      DAO with Zeevo.
-    </h4>
-    <div class="lg:py-16 lg:px-16">
-      <div class="flex flex-col lg:flex-row justify-between items-center relative py-16 mx-4 lg:mx-0">
-        <object data="./images/1.svg" name="First step" class="w-16 z-10"></object>
-        <object name="line" data="./images/line.svg" class="absolute hidden lg:block z-0 h-48"
-          style="left: 30.5px; top: 140px"></object>
-        <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
-          Choose a title and description for your new sequence.
-        </p>
-        <p style="border-left: 3px #ffc043 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 lg:pl-6 mx-4 lg:mx-0">
-          The sequence title and description will help others know what to
-          expect from your sequence. When you link and share your sequence,
-          make it exciting and include a call to action!
-        </p>
-      </div>
-      <div class="flex flex-col lg:flex-row justify-between items-center relative lg:py-16 mx-4 lg:mx-0">
-        <object data="./images/2.svg" name="second step" class="w-16 z-10"></object>
-        <object data="./images/line.svg" name="line" class="absolute hidden lg:block z-0 h-48"
-          style="left: 30.5px; top: 140px"></object>
-        <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
-          Create sequence blocks & fill them with your content.
-        </p>
-        <p style="border-left: 3px #68d795 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
-          You can think of a block as a question, but creators can use blocks
-          for various purposes. Blocks can communicate ideas or concepts too.
-          Zeevo supports multi-image, short answers, and multi-choice blocks
-          with our alpha release.
-        </p>
-      </div>
-      <div class="flex flex-col lg:flex-row justify-between items-center relative py-16 mx-4 lg:mx-0">
-        <object data="./images/3.svg" name="Thrid step" class="w-16 z-10"></object>
-        <object data="./images/line.svg" name="line" class="absolute hidden lg:block z-0 h-48"
-          style="left: 30.5px; top: 140px"></object>
-        <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
-          Customize the visuals & design your PoP NFT to your liking.
-        </p>
-        <p style="border-left: 3px #e11660 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
-          Set your PoP NFT image, title, and description, and let Zeevo handle
-          the rest. Respondents can connect their ETH accounts, and we send
-          them your custom PoP NFTs directly.
-        </p>
-      </div>
-      <div class="flex flex-col lg:flex-row justify-between items-center py-16 mx-4 lg:mx-0">
-        <object data="./images/4.svg" name="Fourth step" class="w-16 z-10"></object>
-        <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
-          Share your sequence with your fans, followers, guild, or DAO.
-        </p>
-        <p style="border-left: 3px #ffc043 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
-          It's up to you how to distribute your sequence. By default, we don't
-          display your sequence to users, so it's 100% up to you how and where
-          you would like to share.
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- END HOW ITS WORK-->
-  <!-- START NOW-->
-  <div class="flex items-center justify-center z-10">
-    <button
-      class="py-3.5 px-12 font-bold z-10 custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-      onclick=" window.open('https://app.zeevo.co/auth/login','_blank')">
-      Start now
-    </button>
-  </div>
-  <!-- END START NOW-->
-  <object data="./images/bg-bottom.svg" name="Bottom background" class="absolute z-0"
-    style="left: -20%; bottom: 0; width: 1306px; height: 800px"></object>
-  <!-- FOOTER-->
-  <footer
-    class="w-full lg:mx-auto max-w-screen-xl flex flex-row items-center p-2 mt-44 text-lg justify-between relative py-12">
-    <object name="decoration" data="./images/pastille3.svg" class="absolute bottom-0 z-0"
-      style="width: 1200px"></object>
-    <div class="text-lg text-white relative">
-      <object name="Zeevo logo" data="./images/header.svg" class="w-20 lg:w-44 absolute -top-20 lg:-top-8"></object>
-    </div>
-    <p class="text-greytext w-full text-center">
-      © 2022 - Zeevo Technologies Inc
-    </p>
-  </footer>
-
-  <!-- END FOOTER-->
-</body>
-
+    <!-- END FOOTER-->
+  </body>
 </html>
