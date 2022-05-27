@@ -73,6 +73,21 @@
       * {
         font-family: "Poppins", sans-serif;
       }
+      .floatingImg {
+        -webkit-animation: float 8s ease-in-out infinite;
+        animation: float 8s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translatey(0px);
+        }
+        50% {
+          transform: translatey(-40px);
+        }
+        100% {
+          transform: translatey(0px);
+        }
+      }
 
       .menu {
         transform: translateY(-100%);
@@ -243,12 +258,13 @@
             Close
           </button>
         </li>
-        <button
+        <a
+          href="https://app.zeevo.co/auth/login"
+          target="_blank"
           class="py-2 custom-border-login px-8 absolute top-10 right-10 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-          onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
         >
           Login
-        </button>
+        </a>
       </ul>
 
       <div class="flex flex-row-reverse text-white mr-4 ml-4 lg:hidden z-10">
@@ -268,23 +284,24 @@
         </button>
       </div>
       <div class="flex items-center hidden lg:flex z-10">
-        <button
+        <a
+          href="https://app.zeevo.co/auth/login"
+          target="_blank"
           class="py-2 custom-border-login px-8 font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-          onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
         >
           Login
-        </button>
+        </a>
       </div>
     </header>
     <!-- CTA -->
-    <section class="mt-10 lg:mx-auto max-w-screen-xl mx-auto px-4 lg:px-0">
+    <section class="mt-10 lg:mx-auto max-w-screen-xl mx-auto px-4 xl:px-0">
       <div class="flex">
         <div class="flex relative">
           <div class="flex w-full lg:w-3/4 flex-col justify-center">
             <object
               name="decorations"
               data="./images/pastille2.svg"
-              class="absolute -top-20"
+              class="absolute -top-20 floatingImg"
               style="width: 1200px"
             ></object>
             <object
@@ -324,7 +341,7 @@
           <object
             name="Decorations"
             data="./images/pastille.svg"
-            class="w-4/5 absolute top-0"
+            class="w-4/5 absolute top-0 floatingImg"
           ></object>
         </div>
       </div>
@@ -333,20 +350,20 @@
 
     <!-- BE A MOVER -->
     <section
-      class="mx-4 lg:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-16 px-8 lg:px-16 rounded-3xl"
+      class="mx-4 xl:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-16 px-8 lg:px-16 rounded-3xl"
     >
       <div class="flex flex-col lg:flex-row gap-20">
         <div
           class="flex flex-col w-full lg:w-1/2 gap-4 justify-center items-center"
         >
           <h2
-            class="text-white text-2xl lg:text-5xl font-bold"
+            class="text-white text-2xl lg:text-5xl font-bold z-10"
             style="line-height: 65px"
           >
             Engage your audience & build community. Create a Zeevo sequence
             today!
           </h2>
-          <h3 class="text-greytext" style="line-height: 26px">
+          <h3 class="text-greytext z-10" style="line-height: 26px">
             Be part of the revolution. Create surveys, questionnaires, games,
             curated collections, and much more.<br /><br />
             Respondents receive custom proof of participation NFTs as a reward
@@ -596,12 +613,13 @@
     <!-- END HOW ITS WORK-->
     <!-- START NOW-->
     <div class="flex items-center justify-center z-10">
-      <button
+      <a
+        target="_blank"
+        href="https://app.zeevo.co/auth/login"
         class="py-3.5 px-12 font-bold z-10 custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-        onclick=" window.open('https://app.zeevo.co/auth/login','_blank')"
       >
         Start now
-      </button>
+      </a>
     </div>
     <!-- END START NOW-->
     <object
@@ -617,7 +635,7 @@
       <object
         name="decoration"
         data="./images/pastille3.svg"
-        class="absolute bottom-0 z-0"
+        class="absolute bottom-0 z-0 floatingImg"
         style="width: 1200px"
       ></object>
       <div class="text-lg text-white relative">
