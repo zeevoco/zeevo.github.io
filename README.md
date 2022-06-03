@@ -1,4 +1,4 @@
-# Zeevo alpha test liftoff ✨
+# Zeevo base landing page✨
 
 👉🏽 [Zeevo.co](https://zeevo.co)
 👉 [@zeevo_co](https://twitter.com/zeevo_co)
