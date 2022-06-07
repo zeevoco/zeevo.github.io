@@ -152,6 +152,7 @@
 <body class="bg-background px4 lg:mx-auto relative overflow-x-hidden">
   <object name="background-top" data="./images/bg-top.svg" class="absolute z-0" style="left: 30%; top: -40%"></object>
   <header class="w-full max-w-screen-xl mx-auto z-10 flex flex-row items-center p-2 text-lg justify-between py-12">
+    <object name="Decorations" data="./images/pastille4.svg" class="w-72 absolute top-20 left-80 floatingImg"></object>
     <div class="text-lg text-white lg:flex">
       <object name="zeevo logo" data="./images/header.svg" class="w-44 z-10"></object>
     </div>
@@ -227,16 +228,14 @@
             Create, connect, explore, & build community.
           </h1>
           <div class="flex gap-6">
-            <button
-              class="py-1 px-12 lg:py-3.5 z-10 font-bold custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-              onclick=" window.open('https://app.zeevo.co/auth/register','_blank')">
+            <a target="_blank" href="https://app.zeevo.co/auth/register"
+              class="py-2 px-8 z-10 whitespace-nowrap font-bold custom-background transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none">
               Start now
-            </button>
-            <button
-              class="z-10 py-1 px-12 lg:py-3.5 custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none"
-              onclick=" window.open('https://app.zeevo.co/auth/login','_blank')">
+            </a>
+            <a target="_blank" href="https://app.zeevo.co/auth/login"
+              class="z-10 py-2 px-8 whitespace-nowrap custom-border font-bold transition ease-in duration-200 rounded-full text-white hover:underline focus:outline-none">
               Login
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -250,26 +249,25 @@
   <!-- END CTA -->
 
   <!-- BE A MOVER -->
-  <section class="mx-4 xl:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-16 px-8 lg:px-16 rounded-3xl">
+  <section class="mx-4 xl:mx-auto max-w-screen-xl custom-border my-8 lg:my-20 py-8 lg:py-20 px-8 lg:px-20 rounded-3xl">
     <div class="flex flex-col lg:flex-row gap-20">
       <div class="flex flex-col w-full lg:w-1/2 gap-4 justify-center items-center">
-        <h2 class="text-white text-2xl lg:text-5xl font-bold z-10" style="line-height: 65px">
-          Engage your audience & create a Zeevo sequence
-          today!
+        <h2 class="text-white text-2xl lg:text-4xl font-bold z-10" style="line-height: 55px">
+          Engage your audience & create a Zeevo sequence today!
         </h2>
         <h3 class="text-greytext z-10" style="line-height: 26px">
-          Create surveys, questionnaires, games,
-          curated collections, and more.<br /><br />
+          Create surveys, questionnaires, games, curated collections, and
+          more.<br /><br />
           Respondents receive custom proof of participation NFTs as a reward
           for their time, attention, and ideas.
         </h3>
       </div>
       <div class="w-full lg:w-1/2 flex flex-col gap-16">
         <div class="flex flex-col lg:flex-row gap-16">
-          <div class="z-10">
+          <div class="z-10 w-full lg:w-1/2">
             <div class="flex gap-4 items-center">
               <object data="./images/collect.svg" name="collect" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
+              <p class="text-white text-lg font-bold w-full lg:w-1/3">
                 Collect Feedback
               </p>
             </div>
@@ -282,10 +280,10 @@
               Learn more
             </a>
           </div>
-          <div class="z-10">
+          <div class="z-10 w-full lg:w-1/2">
             <div class="flex gap-4 items-center">
               <object data="./images/dao.svg" name="dao" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
+              <p class="text-white text-lg font-bold w-full lg:w-1/3">
                 DAO Coordination
               </p>
             </div>
@@ -299,11 +297,11 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row gap-8">
-          <div class="z-10">
+        <div class="flex flex-col lg:flex-row gap-16">
+          <div class="z-10 w-full lg:w-1/2">
             <div class="flex gap-4 items-center">
               <object data="./images/build.svg" name="build" class="w-10"></object>
-              <p class="text-white text-lg font-bold w-full lg:w-1/2">
+              <p class="text-white text-lg font-bold w-full lg:w-1/3">
                 Build anything
               </p>
             </div>
@@ -317,9 +315,9 @@
               Learn more
             </a>
           </div>
-          <div class="z-10">
+          <div class="z-10 w-full lg:w-1/2">
             <div class="flex gap-4 items-center">
-              <object data="./images/collect.svg" name="collect" class="w-10"></object>
+              <object data="./images/nft.svg" name="collect" class="w-10"></object>
               <p class="text-white text-lg font-bold w-full lg:w-1/2">
                 Custom PoP NFTs
               </p>
@@ -346,7 +344,7 @@
       it works
     </h3>
     <h4
-      class="flex w-full items-center justify-center text-greytext mx-auto max-w-screen-md py-16 px-4 lg:px-0 text-center text-lg"
+      class="flex w-full items-center justify-center text-greytext mx-auto max-w-screen-md py-8 px-4 lg:px-0 text-center text-lg"
       style="line-height: 46px">
       See how easy it is to create original content for your fans, guild, or
       DAO with Zeevo.
@@ -359,8 +357,9 @@
         <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
           Choose a title and description for your new sequence.
         </p>
-        <p style="border-left: 3px #ffc043 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 lg:pl-6 mx-4 lg:mx-0">
+        <p
+          class="text-greytext flex items-center gap-12 w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 mx-4 lg:mx-0">
+          <object data="./images/border1.svg" style="width: 0.185rem" name="second step"></object>
           The sequence title and description will help others know what to
           expect from your sequence. When you link and share your sequence,
           make it exciting and include a call to action!
@@ -373,8 +372,9 @@
         <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
           Create sequence blocks & fill them with your content.
         </p>
-        <p style="border-left: 3px #68d795 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
+        <p
+          class="text-greytext flex items-center gap-12 w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 mx-4 lg:mx-0">
+          <object data="./images/border2.svg" style="width: 0.185rem" name="second step"></object>
           You can think of a block as a question, but creators can use blocks
           for various purposes. Blocks can communicate ideas or concepts too.
           Zeevo supports multi-image, short answers, and multi-choice blocks
@@ -388,8 +388,9 @@
         <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
           Customize the visuals & design your PoP NFT to your liking.
         </p>
-        <p style="border-left: 3px #e11660 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
+        <p
+          class="text-greytext flex items-center gap-12 w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 mx-4 lg:mx-0">
+          <object data="./images/border3.svg" style="width: 0.185rem" name="second step"></object>
           Set your PoP NFT image, title, and description, and let Zeevo handle
           the rest. Respondents can connect their ETH accounts, and we send
           them your custom PoP NFTs directly.
@@ -400,8 +401,9 @@
         <p class="text-white z-10 text-3xl w-full lg:w-2/6 mt-4 text-center lg:text-left lg:mt-0 px-6">
           Share your sequence with your fans, followers, guild, or DAO.
         </p>
-        <p style="border-left: 3px #ffc043 solid"
-          class="text-greytext w-full lg:w-3/6 text-center lg:text-left mt-4 lg:mt-0 pl-6">
+        <p
+          class="text-greytext flex items-center gap-12 w-full lg:w-3/6 z-10 text-center lg:text-left mt-4 lg:mt-0 mx-4 lg:mx-0">
+          <object data="./images/border1.svg" style="width: 0.185rem" name="second step"></object>
           It's up to you how to distribute your sequence. By default, we don't
           display your sequence to users, so it's 100% up to you how and where
           you would like to share.
@@ -419,7 +421,7 @@
   </div>
   <!-- END START NOW-->
   <object data="./images/bg-bottom.svg" name="Bottom background" class="absolute z-0"
-    style="left: -20%; bottom: 0; width: 1306px; height: 800px"></object>
+    style="left: -10%; bottom: 0%; width: 1306px; height: 1300px"></object>
   <!-- FOOTER-->
   <footer
     class="w-full lg:mx-auto max-w-screen-xl flex flex-row items-center p-2 mt-44 text-lg justify-between relative py-12">
